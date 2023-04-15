@@ -14,7 +14,7 @@
  
   Authors in chronological order of contribution:
   Author 1: Timothy E. Riedel
-  Author 2: ?????????
+  Author 2: Ethan Durham
   
   References:
   http://docs.webplatform.org/wiki/concepts/programming/drawing_images_onto_canvas#Loading_the_image_programmatically
@@ -24,7 +24,7 @@
   http://stackoverflow.com/questions/11929099/html5-canvas-drawimage-ratio-bug-ios
   
   Brief Description of Goal of Code:
-  blah, blah, blah,
+  Load user's image in one canvas and display only the blue intensities of each pixel.
  
   Known Issues:
   blah, blah, blah, blah
@@ -134,13 +134,24 @@
       </div>
       <div id="messageDisplayArea"></div>
       
+     <!--First Canvas (Load Image)-->
       <canvas id="myCanvas" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas>
-      <script> /* This script initiates the cavas and puts the text on the canvas "myCanvas" */
+      <script> /* This script initiates the canvas and puts the text on the canvas "myCanvas" */
         var canvas = document.getElementById('myCanvas');
         var context = canvas.getContext("2d");
         context.font = '20pt Calibri';
         context.fillStyle = "black";
         context.fillText("Original image will go here", 10, 20);
+      </script>
+
+     <!--Second Canvas (Canvas for Blue Image)-->
+      <canvas id="myCanvas" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas>
+      <script> /* This script initiates the canvas and puts the text on the canvas "myCanvas2". This is directly copied from above. */
+        var canvas = document.getElementById('myCanvas');
+        var context = canvas.getContext("2d");
+        context.font = '20pt Calibri';
+        context.fillStyle = "black";
+        context.fillText("Blue image will go here", 10, 20);
       </script>
 
     </div><!-- /content -->
