@@ -101,7 +101,13 @@
           /*  ++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 
           /* PUT ANY CHANGES TO THE JAVASCRIPT HERE  */
-          
+          /*These variables must be used to implement the second canvas and receive context.*/
+          var canvas2 = document.getElementById('myCanvas2');
+          var context2 = canvas2.getContext("2d");
+         
+          /*The following variables grab image data from the canvas so it can be modified down-the-line*/
+          var imageData = context.getImageData(0, 0, 600, 500);
+          var data = imageData.data;
           
           
           
@@ -145,9 +151,9 @@
       </script>
 
      <!--Second Canvas (Canvas for Blue Image)-->
-      <canvas id="myCanvas" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas>
+      <canvas id="myCanvas2" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas>
       <script> /* This script initiates the canvas and puts the text on the canvas "myCanvas2". This is directly copied from above. */
-        var canvas = document.getElementById('myCanvas');
+        var canvas2 = document.getElementById('myCanvas2');
         var context2 = canvas.getContext("2d");
         context2.font = '20pt Calibri';
         context2.fillStyle = "black";
