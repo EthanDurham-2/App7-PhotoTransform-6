@@ -108,8 +108,22 @@
           /*The following variables grab image data from the canvas so it can be modified down-the-line*/
           var imageData = context.getImageData(0, 0, 600, 500);
           var data = imageData.data;
-          
-          
+         
+          /*To modify all pixels, we have to iterate through the stored array data, then change all of the data to blues. Lab peer, Janavi, helped with this part.*/
+          for(var i = 0; i < data.length; i+= 4) {
+           //Create a "red" , "green" , and "blue" variable to store all pixels that correspond to those colors.
+           var red = data[i];
+           var green = data[i + 1];
+           var blue = data[i + 2];
+         
+           //Then, set both red and green variables to 0, so that only blue is shown.
+           data[i] = 0;
+           data[i + 1] = 0;
+           data[i + 2] = blue;
+          }
+         
+         //Update canvas 2 context with the stored variables and modifications above.
+         context2.putImageData(imageData, 0, 0);
           
         } // end of img.onload
         
